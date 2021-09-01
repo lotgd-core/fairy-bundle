@@ -1,8 +1,8 @@
 {
     "name": "lotgd-core/fairy-bundle",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "type": "lotgd-bundle",
-    "description": "Forest Fairy for LoTGD IDMarinas Edition.",
+    "description": "Forest Fairy event for LoTGD IDMarinas Edition.",
     "license": "BSD-3-Clause",
     "authors": [
         {

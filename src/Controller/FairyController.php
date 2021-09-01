@@ -128,7 +128,12 @@ class FairyController extends AbstractController
             --$session['user']['turns'];
         }
 
-        $this->navigation->forestNav($request->query->get('translation_domain_navigation', ''));
+        $nav = $request->query->get('navigation_method', '');
+
+        if (method_exists($this->navigation, $nav))
+        {
+            $this->navigation->{$nav}($request->query->get('translation_domain_navigation', ''));
+        }
 
         return $this->render('@LotgdFairy/give.html.twig', $params);
     }
@@ -137,7 +142,12 @@ class FairyController extends AbstractController
     {
         $this->response->pageStart('title.dont', [], self::TRANSLATION_DOMAIN);
 
-        $this->navigation->forestNav($request->query->get('translation_domain_navigation', ''));
+        $nav = $request->query->get('navigation_method', '');
+
+        if (method_exists($this->navigation, $nav))
+        {
+            $this->navigation->{$nav}($request->query->get('translation_domain_navigation', ''));
+        }
 
         return $this->render('@LotgdFairy/dont.html.twig', $this->addParamaters([]));
     }

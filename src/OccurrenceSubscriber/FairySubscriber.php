@@ -66,6 +66,8 @@ class FairySubscriber implements OccurrenceSubscriberInterface
         $this->navigation->addNav('navigation.nav.give.yes', $this->getModuleUrl('give', $translationDomain));
         $this->navigation->addNav('navigation.nav.give.no', $this->getModuleUrl('dont', $translationDomain));
 
+        $this->navigation->setTextDomain();
+
         $this->response->pageAddContent($this->twig->render('@LotgdFairy/encounter.html.twig', $params));
 
         $event->stopPropagation();

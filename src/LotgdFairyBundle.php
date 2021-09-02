@@ -36,7 +36,15 @@ final class LotgdFairyBundle extends Bundle implements LotgdBundleInterface
      */
     public function getLotgdVersion(): string
     {
-        return '0.1.0';
+        return '0.1.2';
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getLotgdIcon(): ?string
+    {
+        return 'hand sparkle';
     }
 
     /**
